@@ -1,0 +1,7 @@
+{
+  "name": "tellU-website",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
