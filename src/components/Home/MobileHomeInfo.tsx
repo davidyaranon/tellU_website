@@ -17,9 +17,9 @@ const MobileHomeInfo: React.FC = () => {
         <div style={{ height: '1vh' }} />
 
         <section id='welcome'>
-          <IonCardTitle style={{ fontSize: '4.75vw' }}> Welcome to the tellU app!</IonCardTitle>
+          <IonCardTitle style={{ fontSize: '1.75rem' }}> Welcome to the tellU app!</IonCardTitle>
           <br />
-          <p style={{ fontSize: '3vw', marginRight: '5%' }}>
+          <p style={{ fontSize: '0.95rem', marginRight: '5%' }}>
             The tellU app puts students into chat rooms with their fellow university students.
             Post about nearby campus events or sightings, or just chat with new friends!
             Let me tellU about some of the features of the app and some updates you can expect in the future.
@@ -32,9 +32,9 @@ const MobileHomeInfo: React.FC = () => {
         <br />
 
         <section id='post-types'>
-          <IonCardTitle style={{ fontSize: '4.75vw' }}> Post Types </IonCardTitle>
+          <IonCardTitle style={{ fontSize: '1.75rem' }}> Post Types </IonCardTitle>
           <br />
-          <p style={{ fontSize: '3vw', marginRight: '5%' }}>
+          <p style={{ fontSize: '0.95rem', marginRight: '5%' }}>
             When posting to the chat room, you can post images, GIFs, and polls! You can also select what type of post you are uploading.
             There are 8 options to choose from:
             <IonRow>
@@ -68,12 +68,12 @@ const MobileHomeInfo: React.FC = () => {
         <br />
 
         <section id='map-pins'>
-          <IonCardTitle style={{ fontSize: '4.75vw' }}> Map Pins </IonCardTitle>
+          <IonCardTitle style={{ fontSize: '1.75rem' }}> Map Pins </IonCardTitle>
           <br />
-          <p style={{ fontSize: '3vw', marginRight: '5%' }}>
+          <p style={{ fontSize: '0.95rem', marginRight: '5%' }}>
             You can choose to add a location pin to the MAPS tab when posting!
             You're able to see all the main POIs (places of interest) on the map,
-            and you can click on them to see more information and posts that happened there.
+            and you can click on them to see more information and posts that happened there. Go to a POI and post now!
           </p>
           <br />
           <div className='img-wrapper'>
@@ -84,9 +84,9 @@ const MobileHomeInfo: React.FC = () => {
         <br />
 
         <section id='events'>
-          <IonCardTitle style={{ fontSize: '4.75vw' }}> Campus Events </IonCardTitle>
+          <IonCardTitle style={{ fontSize: '1.75rem' }}> Campus Events </IonCardTitle>
           <br />
-          <p style={{ fontSize: '3vw', marginRight: '5%' }}>
+          <p style={{ fontSize: '0.95rem', marginRight: '5%' }}>
             See the events going on around campus! You can see the event name, description, location, and time.
             You can also sort by month and share them with your friends.
           </p>
@@ -99,9 +99,9 @@ const MobileHomeInfo: React.FC = () => {
         <br />
 
         <section id='profiles'>
-          <IonCardTitle style={{ fontSize: '4.75vw' }}> Profiles </IonCardTitle>
+          <IonCardTitle style={{ fontSize: '1.75rem' }}> Profiles </IonCardTitle>
           <br />
-          <p style={{ fontSize: '3vw', marginRight: '5%' }}>
+          <p style={{ fontSize: '0.95rem', marginRight: '5%' }}>
             Customize your profile! Upload your profile picture, add your other social medias and even include a featured song!
           </p>
           <br />

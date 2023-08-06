@@ -146,6 +146,8 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-buysell-tint: #2ea56a;
 
   --ion-card-background: #f8fbff;
+  --ion-item-background: #e7e7ed;
+
 
 }
 
@@ -267,7 +269,7 @@ http://ionicframework.com/docs/theming/ */
     --ion-color-step-900: #e6e6e6;
     --ion-color-step-950: #f2f2f2;
 
-    --ion-item-background: #000000;
+    --ion-item-background: #1b1b20;
 
     --ion-card-background: #0D1117;
   }

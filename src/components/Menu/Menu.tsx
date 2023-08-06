@@ -5,11 +5,12 @@
  */
 
 { /* Ionic / React */ }
-import React from 'react';
+import React, { useState } from 'react';
 import {
   IonContent, IonIcon, IonItem,
   IonLabel, IonList, IonMenu,
-  IonMenuToggle
+  IonMenuToggle,
+  useIonRouter
 } from '@ionic/react';
 
 { /* Helpers */ }
@@ -18,11 +19,11 @@ import { AppPage, appPages } from './MenuFunctions';
 { /* Styles */ }
 import '../../App.css';
 import { useHistory } from 'react-router';
+import { dynamicNavigate } from '../Shared/Navigation';
 
 const Menu: React.FC = () => {
 
-  const history = useHistory();
-
+  const router = useIonRouter();
   /**
    * @description This function returns the router link of the app page.
    * 
@@ -31,7 +32,7 @@ const Menu: React.FC = () => {
   const handleClick = (appPage: AppPage): void => {
     if (window.location.href.includes(appPage.url)) { return; }
     if (appPage.redirect) { window.location.href = appPage.url; return; }
-    history.push(appPage.url);
+    dynamicNavigate(router, appPage.url, 'forward');
   }
 
   return (
@@ -42,9 +43,9 @@ const Menu: React.FC = () => {
         <IonList id='routing-list' style={{ background: 'var(--ion-color-menu-background' }}>
 
           {appPages.map((appPage: AppPage, index: number) => {
-            const isSelected = location.pathname.includes(appPage.url) || (location.pathname === '/' && appPage.url === '/home');
+            const isSelected = appPage.url === window.location.pathname;
             return (
-              <React.Fragment key={appPage.url + index} >
+              <React.Fragment key={appPage.url + index}>
                 <IonMenuToggle autoHide={false}>
                   <IonItem color='menu-background' button className={`menu-item ${isSelected ? 'selected' : ''}`} onClick={() => handleClick(appPage)} routerDirection='none' lines='none' detail={false}>
                     <IonIcon color={isSelected ? 'primary' : 'dark'} aria-hidden='true' slot='start' ios={appPage.iosIcon} md={appPage.mdIcon} />

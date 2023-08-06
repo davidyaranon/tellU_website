@@ -30,43 +30,65 @@ import Menu from './components/Menu/Menu';
 import PrivacyPolicy from './Pages/PrivacyPolicy';
 import TermsAndConditions from './Pages/TermsAndConditions';
 import About from './Pages/About';
+import ForgotPassword from './Pages/ForgotPassword';
+import { ToastProvider } from '@agney/ir-toast';
+import { DeleteAccount } from './Pages/DeleteAccount';
+import Contact from './Pages/Contact';
 
 setupIonicReact({ mode: 'ios', swipeBackEnabled: false });
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
+    <ToastProvider>
 
-      <IonSplitPane hidden contentId='main'>
+      <IonReactRouter>
 
-        <Menu />
+        <IonSplitPane hidden contentId='main'>
 
-        <IonRouterOutlet id='main' animated={false}>
+          <Menu />
 
-          <Route path='/' exact={true}>
-            <Redirect to='/home' />
-          </Route>
+          <IonRouterOutlet id='main' animated={false}>
 
-          <Route path='/home' exact={true}>
-            <Home />
-          </Route>
+            <Route path='/' exact={true}>
+              <Redirect to='/home' />
+            </Route>
 
-          <Route path='/about' exact={true}>
-            <About />
-          </Route>
-          <Route path='/terms-and-conditions' exact={true}>
-            <TermsAndConditions />
-          </Route>
+            <Route path='/home' exact={true}>
+              <Home />
+            </Route>
 
-          <Route path='/privacy-policy' exact={true}>
-            <PrivacyPolicy />
-          </Route>
+            <Route path='/about' exact={true}>
+              <About />
+            </Route>
 
-        </IonRouterOutlet>
+            <Route path='/contact' exact={true}>
+              <Contact />
+            </Route>
 
-      </IonSplitPane>
 
-    </IonReactRouter>
+            <Route path='/terms-and-conditions' exact={true}>
+              <TermsAndConditions />
+            </Route>
+
+            <Route path='/privacy-policy' exact={true}>
+              <PrivacyPolicy />
+            </Route>
+
+            <Route path='/forgot-password' exact={true}>
+              <ForgotPassword />
+            </Route>
+
+            <Route path='/delete-account' exact={true}>
+              <DeleteAccount />
+            </Route>
+
+          </IonRouterOutlet>
+
+        </IonSplitPane>
+
+      </IonReactRouter>
+
+    </ToastProvider>
   </IonApp>
 );
 
