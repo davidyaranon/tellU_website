@@ -1,0 +1,117 @@
+/**************** HEADER COMPONENT ****************/
+
+@media (max-width: 768px) {
+  .header-info {
+    display: none !important;
+  }
+
+  .mobile-header-info {
+    display: inherit !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-info {
+    display: inherit !important;
+  }
+
+  .mobile-header-info {
+    display: none !important;
+  }
+}
+
+.logo {
+  width: 100px;
+}
+
+/**************** MENU COMPONENT ****************/
+
+/* Hide by default */
+.ion-menu-button {
+  display: none !important;
+}
+
+/* Show when the screen width is smaller than 768px */
+@media (max-width: 768px) {
+  .ion-menu-button {
+    display: inherit !important;
+  }
+}
+
+/* Hide menu when the screen width is larger than 768px */
+@media (min-width: 768px) {
+  .ion-menu {
+    display: none !important;
+  }
+}
+
+.split-pane-visible>.split-pane-side {
+  min-width: 239px !important;
+  max-width: 239px !important;
+}
+
+ion-menu.ios ion-list {
+  padding: 20px 0 0 0;
+}
+
+ion-menu.ios ion-note {
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+ion-menu.ios ion-item {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --min-height: 50px;
+}
+
+ion-menu.ios ion-item ion-icon {
+  font-size: 24px;
+  color: var(--ion-color-primary);
+}
+
+ion-menu.ios ion-item .selected ion-icon {
+  color: var(--ion-color-primary);
+}
+
+ion-menu.ios ion-list#labels-list ion-list-header {
+  margin-bottom: 8px;
+}
+
+ion-menu.ios ion-list-header,
+ion-menu.ios ion-note {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+ion-menu.ios ion-note {
+  margin-bottom: 8px;
+}
+
+/**************** HOME PAGE ****************/
+@media (max-width: 768px) {
+  .desktop-home-info {
+    display: none !important;
+  }
+
+  .mobile-home-info {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .desktop-home-info {
+    display: block;
+  }
+
+  .mobile-home-info {
+    display: none !important;
+  }
+}
+
+.img-wrapper {
+  display: flex;
+  overflow: hidden;
+  padding-left: 25%;
+  padding-right: 25%;
+}
