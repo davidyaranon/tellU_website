@@ -27,6 +27,9 @@ import './theme/variables.css';
 import { Route, Redirect } from 'react-router';
 import Home from './Pages/Home';
 import Menu from './components/Menu/Menu';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
+import TermsAndConditions from './Pages/TermsAndConditions';
+import About from './Pages/About';
 
 setupIonicReact({ mode: 'ios', swipeBackEnabled: false });
 
@@ -46,6 +49,17 @@ const App: React.FC = () => (
 
           <Route path='/home' exact={true}>
             <Home />
+          </Route>
+
+          <Route path='/about' exact={true}>
+            <About />
+          </Route>
+          <Route path='/terms-and-conditions' exact={true}>
+            <TermsAndConditions />
+          </Route>
+
+          <Route path='/privacy-policy' exact={true}>
+            <PrivacyPolicy />
           </Route>
 
         </IonRouterOutlet>

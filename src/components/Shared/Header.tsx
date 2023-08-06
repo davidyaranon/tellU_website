@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
-import { IonHeader, IonToolbar, IonButtons, IonMenuButton, IonRow, IonCol, IonButton } from '@ionic/react';
-import { useHistory } from 'react-router';
+import { IonHeader, IonToolbar, IonButtons, IonMenuButton, IonRow, IonCol, IonButton, useIonRouter } from '@ionic/react';
 import tellU_black from '../../Assets/Images/tellU_black.png';
 import tellU_white from '../../Assets/Images/tellU_white.png';
+import { dynamicNavigate } from './Navigation';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  selectedPage?: string;
+}
 
-  const history = useHistory();
+const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
 
-  const handleNavBarClick = (route: string): void => {
-    if (window.location.href.includes(route)) return;
-    history.push(route);
-  };
+  const { selectedPage } = props;
+
+  const router = useIonRouter();
 
   const [isDarkMode, setIsDarkMode] = useState(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
@@ -36,24 +37,24 @@ const Header: React.FC = () => {
 
         {/* Always show logo at right end of screen */}
         <IonButton fill='clear' slot='end'>
-          <img className='logo' src={isDarkMode ? tellU_white : tellU_black} />
+          <img className='logo' src={isDarkMode ? tellU_white : tellU_black} onClick={() => dynamicNavigate(router, '/home', 'forward')} />
         </IonButton>
 
         { /* Only show the title if the screen width is greater than 768px */}
         <div className='header-info'>
           <IonRow style={{ paddingLeft: '5vw' }}>
             <IonCol size='1.5'>
-              <IonButton style={window.location.href.includes('home') ? { fontWeight: 'bold' } : {}} fill='clear' onClick={() => handleNavBarClick('/home')}>
+              <IonButton style={selectedPage === 'home' ? { fontWeight: 'bold' } : {}} fill='clear' onClick={() => dynamicNavigate(router, '/home', 'forward')}>
                 Home
               </IonButton>
             </IonCol>
             <IonCol size='1.5' >
-              <IonButton style={window.location.href.includes('about') ? { fontWeight: 'bold' } : {}} fill='clear' onClick={() => handleNavBarClick('/about')}>
+              <IonButton style={selectedPage === 'about' ? { fontWeight: 'bold' } : {}} fill='clear' onClick={() => dynamicNavigate(router, '/about', 'forward')}>
                 About
               </IonButton>
             </IonCol>
             <IonCol size='1.5'>
-              <IonButton style={window.location.href.includes('contact') ? { fontWeight: 'bold' } : {}} fill='clear' onClick={() => handleNavBarClick('/contact')}>
+              <IonButton style={selectedPage === 'contact' ? { fontWeight: 'bold' } : {}} fill='clear' onClick={() => dynamicNavigate(router, '/contact', 'forward')}>
                 Contact
               </IonButton>
             </IonCol>
