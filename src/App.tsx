@@ -25,15 +25,16 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import { Route, Redirect } from 'react-router';
-import Home from './Pages/Home';
+import Home from './pages/Home';
 import Menu from './components/Menu/Menu';
-import PrivacyPolicy from './Pages/PrivacyPolicy';
-import TermsAndConditions from './Pages/TermsAndConditions';
-import About from './Pages/About';
-import ForgotPassword from './Pages/ForgotPassword';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsAndConditions from './pages/TermsAndConditions';
+import About from './pages/About';
+import ForgotPassword from './pages/ForgotPassword';
 import { ToastProvider } from '@agney/ir-toast';
-import { DeleteAccount } from './Pages/DeleteAccount';
-import Contact from './Pages/Contact';
+import { DeleteAccount } from './pages/DeleteAccount';
+import Contact from './pages/Contact';
+import QrRedirect from './pages/QrRedirect';
 
 setupIonicReact({ mode: 'ios', swipeBackEnabled: false });
 
@@ -81,6 +82,12 @@ const App: React.FC = () => (
             <Route path='/delete-account' exact={true}>
               <DeleteAccount />
             </Route>
+
+            <Route path='/qr-redirect' exact={true}>
+              <QrRedirect />
+            </Route>
+
+            <Route component={Home} />
 
           </IonRouterOutlet>
 

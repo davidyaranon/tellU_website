@@ -19,11 +19,11 @@ const Footer: React.FC<FooterProps> = (props: FooterProps) => {
       <br />
       <IonRow style={{ padding: "1%" }}>
         <IonCol className='ion-text-right'>
-          <img src={app_store} alt='iOS App Store logo' className='store-logo' onClick={() => { window.location.href = "https://apps.apple.com/us/app/tellu/id6443764288?ign-itscg=30200&ign-itsct=apps_box_link"; }} />
+          <img src={app_store} alt='iOS App Store logo' className='store-logo' onClick={() => { window.open("https://apps.apple.com/us/app/tellu/id6443764288?ign-itscg=30200&ign-itsct=apps_box_link", '_blank') }} />
         </IonCol>
         <IonCol size=".5"></IonCol>
         <IonCol className='ion-text-left'>
-          <img src={google_play} alt='Google Play Store logo' className='store-logo' style={{ scale: "1.25", transform: 'translateY(-5%)' }} onClick={() => { window.location.href = ""; }} />
+          <img src={google_play} alt='Google Play Store logo' className='store-logo' style={{ scale: "1.25", transform: 'translateY(-5%)' }} onClick={() => { window.open("https://play.google.com/store/apps/details?id=com.tellU.v3.quantum", '_blank') }} />
         </IonCol>
       </IonRow>
       <IonRow>

@@ -76,7 +76,7 @@ export const appPages: AppPage[] = [
   },
   {
     title: 'Google Play Store',
-    url: 'GOOGLE.COM',
+    url: 'https://play.google.com/store/apps/details?id=com.tellU.v3.quantum',
     iosIcon: logoGooglePlaystore,
     mdIcon: logoGooglePlaystore,
     redirect: true
