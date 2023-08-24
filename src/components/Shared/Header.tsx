@@ -27,8 +27,8 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   }, []);
 
   return (
-    <IonHeader className='ion-no-border' style={{ padding: '5px' }} translucent>
-      <IonToolbar style={{ display: 'flex', alignItems: 'center', '--background': 'transparent' }}>
+    <IonHeader className='ion-no-border' style={{ padding: '5px' }} >
+      <IonToolbar style={{ display: 'flex', '--background': 'transparent' }}>
 
         {/* Hamburger button that appears when the screen width is smaller than 768px */}
         <IonButtons slot='start'>

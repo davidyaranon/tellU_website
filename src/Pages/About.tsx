@@ -1,3 +1,8 @@
+/**
+ * @file About.tsx
+ * @fileoverview About page, contains information about tellU mobile app, using an IonCard.
+ */
+
 import { IonCard, IonCardContent, IonCardTitle, IonContent, IonPage, useIonViewDidEnter } from "@ionic/react";
 import Header from "../components/Shared/Header";
 import { useRef } from "react";
@@ -9,14 +14,14 @@ const About: React.FC = () => {
   const pageRef = useRef<HTMLIonContentElement | null>(null);
   useIonViewDidEnter(() => {
     pageRef.current && pageRef.current.scrollToTop();
-  }, []);
+  }, [pageRef, pageRef.current]);
 
   return (
-    <IonPage ref={pageRef}>
+    <IonPage>
 
       <Header selectedPage="about" />
 
-      <IonContent>
+      <IonContent ref={pageRef}>
         <IonCard>
           <IonCardContent>
             <IonCardTitle style={{ fontSize: "2rem" }}>About</IonCardTitle>

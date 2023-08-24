@@ -5,7 +5,7 @@
  */
 
 { /* Ionic / React */ }
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import {
   IonContent, IonIcon, IonItem,
   IonLabel, IonList, IonMenu,
@@ -18,12 +18,26 @@ import { AppPage, appPages } from './MenuFunctions';
 
 { /* Styles */ }
 import '../../App.css';
-import { useHistory } from 'react-router';
 import { dynamicNavigate } from '../Shared/Navigation';
 
 const Menu: React.FC = () => {
 
   const router = useIonRouter();
+  const menuRef = useRef<HTMLIonMenuElement | null>(null);
+
+  const handleMenu = useCallback(async () => {
+    if(menuRef.current) {
+      const isOpen = await menuRef.current.isOpen();
+      if(isOpen) {
+        menuRef.current.close();
+      }
+    }
+  }, [menuRef.current]);
+
+  useEffect(() => {
+    handleMenu();
+  })
+
   /**
    * @description This function returns the router link of the app page.
    * 
@@ -33,10 +47,10 @@ const Menu: React.FC = () => {
     if (window.location.href.includes(appPage.url)) { return; }
     if (appPage.redirect) { window.location.href = appPage.url; return; }
     dynamicNavigate(router, appPage.url, 'forward');
-  }
+  };
 
   return (
-    <IonMenu className='ion-menu' contentId='main' type='overlay' swipeGesture={false}>
+    <IonMenu ref={menuRef} className='ion-menu' contentId='main' type='overlay' swipeGesture={false}>
       <IonContent style={{ '--background': 'var(--ion-color-menu-background' }}>
 
         {/* Page nav links */}

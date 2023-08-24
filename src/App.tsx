@@ -36,7 +36,7 @@ import { DeleteAccount } from './pages/DeleteAccount';
 import Contact from './pages/Contact';
 import QrRedirect from './pages/QrRedirect';
 
-setupIonicReact({ mode: 'ios', swipeBackEnabled: false });
+setupIonicReact({ mode: 'ios', swipeBackEnabled:true });
 
 const App: React.FC = () => (
   <IonApp>
